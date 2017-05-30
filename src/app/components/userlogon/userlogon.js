@@ -14,26 +14,31 @@
             $state.go('order');
         };
         vm.userform = {};
-        vm.message='';
+        vm.message = '';
         //user = userFactory.getUserByCod();
         vm.enterBar = function () {
             var cod = vm.userform.usercod;
-            console.log('cod',cod);
-         userFactory.getLoguser(cod).then(function(data){
-             console.log('data[0]',data[0]);
-            var bdcustomer=data[0];
-            if(!bdcustomer){
-             vm.message='Ese codigo no existe';
-             bdcustomer=null;
-            }else{
-             if(bdcustomer.keyword!=vm.userform.keyword){
-                 vm.message='Esa no es tu clave';
-             }else{
-                 vm.message='Hola ' + bdcustomer.name +' Pasa...';
-                 $timeout(goOrder, 2000);
-             }
-            };
-         });
+            console.log('cod', cod);
+            if (!cod) {
+                vm.message = 'Introduce tu codigo';
+            } else {
+                userFactory.getLoguser(cod).then(function (data) {
+                    console.log('data[0]', data[0]);
+                    var bdcustomer = data[0];
+                    if (!bdcustomer) {
+                        vm.message = 'Ese codigo no existe';
+                        bdcustomer = null;
+                    } else {
+                        if (bdcustomer.keyword != vm.userform.keyword) {
+                            vm.message = 'Esa no es tu clave';
+                        } else {
+                            vm.message = 'Hola ' + bdcustomer.name + ' Pasa...';
+                            $timeout(goOrder, 2000);
+                        }
+                    };
+                });
+            }
+
         }
     }
 })(angular)

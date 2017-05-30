@@ -1,0 +1,12 @@
+body{
+    background: linear-gradient(red,yellow,green)
+}
+.clearfix {
+    overflow: auto;
+}
+.tacentre{
+    text-align: center;
+}
+.wid100{
+  width: 100%;
+}

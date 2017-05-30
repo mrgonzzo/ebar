@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Eden Bar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#637082">
+    <link rel="stylesheet" href="app/styles/app.css">
+<link rel="icon" href="app/resources/logo2.jpg" sizes="256x300" type="image/jpg" />
+</head>
+<body ng-app="app" ng-strict-di>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-ui-router.min.js"></script>
+    <!-- our app -->
+    <script src="app/app.js"></script>
+    <script src="app/services/user-factory.js"></script>
+    <script src="app/components/userlogon/userlogon.js"></script>
+    <script src="app/components/order/order.js"></script>
+    <script src="app/components/commons/header/header.js"></script>
+    <script src="app/components/commons/footer/footer.js"></script>
+    <script src="app/components/main-view/mainview.js"></script>
+    <!-- Put your HTML code here -->
+    <comp-header></comp-header>
+    <ui-view></ui-view>
+    <comp-footer></comp-footer>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<div class="tacentre clearfix">
+    <p>LogOn</p><p>{{compUslogon.message}}</p>
+    <div ng-model="compUslogon.userform">
+        <p>
+            <label for="usercode"> Numero de socio: </label>
+            <input type="number" autofocus required ng-model="compUslogon.userform.usercod">
+        </p>
+        <p>
+            <label for="keyword"> keyword: </label>
+            <input type="password" required ng-model="compUslogon.userform.keyword">
+        </p>
+        <input type="submit" ng-click="compUslogon.enterBar()" value="Pasa al bar...">
+    </div>

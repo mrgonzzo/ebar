@@ -3,7 +3,7 @@
     function userFactory($q,$http) {
         var module = {};
         var self = module;
-        var user={};
+        module.logeduser;
         module.originalUser = false;
         module.getLoguser = function (usercod) {
              var defered = $q.defer();

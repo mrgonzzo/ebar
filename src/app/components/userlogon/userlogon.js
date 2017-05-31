@@ -33,6 +33,8 @@
                             vm.message = 'Esa no es tu clave';
                         } else {
                             vm.message = 'Hola ' + bdcustomer.name + ' Pasa...';
+                            userFactory.logeduser = bdcustomer;
+                            console.log('userFactory.logeduser',userFactory.logeduser);
                             $timeout(goOrder, 2000);
                         }
                     };

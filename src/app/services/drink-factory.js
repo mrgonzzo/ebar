@@ -1,8 +1,9 @@
 (function (angular) {
-    angular.module('app').factory('drinkFactory', [drinkFactory]);
-    function drinkFactory() {
+    angular.module('app').factory('drinkFactory', ['$q', '$http',drinkFactory]);
+    function drinkFactory($q,$http) {
         var module = {};
         var self = module;
+        self.originalDrinks=false;
         module.getDrink = function () {
 
             var defered = $q.defer();

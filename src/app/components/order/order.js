@@ -11,7 +11,11 @@
 
   function controllerCompOrder($state, $timeout, userFactory, drinkFactory) {
     var vm = this;
-    
+    vm.user=userFactory.logeduser;
+    drinkFactory.getDrink().then(function(data){
+        vm.drinks=data;
+        console.log('vm.drinks',vm.drinks);
+    });
     vm.goToOrder = function () {
       $state.go('Order', {}, { reload: true });
     }

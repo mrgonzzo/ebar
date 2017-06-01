@@ -1,23 +1,29 @@
 <div class="tacentre clearfix">
     <p>¿Que deseas {{compOrder.user.name}}?</p>
 
-    <form class="form" ng-model="compOrder.order">
+    <ng-form="orderform" class="form" ng-model="compOrder.order">
         <label for="drink">Drink</label>
         <div class="clearfix centrar">
-            <select name="drinkSelect" ng-model="compOrder.drinkSelect" ng-options="opt as opt for opt in compOrder.drinks">
+            <select name="drinkSelect" ng-model="compOrder.drinkSelect" ng-options="opt as opt for opt in compOrder.drinks" ng-change="compOrder.getKinds()">
                 <option value="">Elige tu bebida</option>
             </select>
         </div>
+        <label for="kind">Kind</label>
         <div class="clearfix centrar">
-            <select name="kindSelect" ng-model="compOrder.kindSelect" ng-disabled="!compOrder.drinkSelect" ng-options="opt.id_drink as opt.kind for opt in compOrder.kinds">
+            <select name="kindSelect" ng-model="compOrder.kindSelect" ng-change="compOrder.setOrder()" ng-disabled="!compOrder.drinkSelect"
+                ng-options="opt.id_drink as opt.kind for opt in compOrder.kinds">
                 <option value="">Seleciona tu bebida</option>
-			<!-- <option ng-repeat="item in compOrder.drinks track by $index" value="{{item.id_drink}}">{{item.kind}}</option>-->
+			
             </select>
         </div>
+        <div class="ordervision">
+            <p>Hola {{compOrder.user.name}}: </p>
+            <p>Vas a pedir {{compOrder.drinkSelect}} {{compOrder.order.kind}}</p>
+            <p>Y te va a costar: {{compOrder.order.price_drink}} €</p>
+        </div>
         <button ng-click="compOrder.askOrder()">Hacer pedido</button>
-    </form>
+        </ng-form>
 
-</div>
 
 
 </div>

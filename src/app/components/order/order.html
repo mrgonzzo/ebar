@@ -11,16 +11,18 @@
         <label for="kind">Kind</label>
         <div class="clearfix centrar">
             <select name="kindSelect" ng-model="compOrder.kindSelect" ng-change="compOrder.setOrder()" ng-disabled="!compOrder.drinkSelect"
-                ng-options="opt.id_drink as opt.kind for opt in compOrder.kinds">
+                ng-options="opt.iddrink as opt.kind for opt in compOrder.kinds">
                 <option value="">Seleciona tu bebida</option>
 			
             </select>
         </div>
+
         <div class="ordervision">
             <p>Hola {{compOrder.user.name}}: </p>
-            <p>Vas a pedir {{compOrder.drinkSelect}} {{compOrder.order.kind}}</p>
-            <p>Y te va a costar: {{compOrder.order.price_drink}} €</p>
+            <p>Vas a pedir {{compOrder.drinkSelect}} {{compOrder.selkind}}</p>
+            <p>Y te va a costar: {{compOrder.order.priceorder}} €</p>
         </div>
+     
         <button ng-click="compOrder.askOrder()">Hacer pedido</button>
         </ng-form>
 

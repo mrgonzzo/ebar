@@ -1,5 +1,5 @@
 # ebar
-## ebar front-end (Angular 1.5)
+## ebar front-end (Angular 1.x)
 ### Purpouse:
 This is a simple web front-back aplication where a loged customer ask for a drink and the order is sended
 to a web-client readed by the waiter.

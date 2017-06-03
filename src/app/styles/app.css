@@ -1,5 +1,6 @@
 body{
-    background: linear-gradient(red,yellow,green)
+    background: linear-gradient(red,yellow,green,black
+    )
 }
 .clearfix {
     overflow: auto;

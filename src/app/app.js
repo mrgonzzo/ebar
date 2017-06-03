@@ -16,21 +16,32 @@
       url: '/aboutus',
       template: '<comp-aboutus></comp-aboutus>'
     };
-    var logon = {
-      name: 'logon',
-      url: '/logon',
+    var uslogon = {
+      name: 'uslogon',
+      url: '/uslogon',
       template: '<comp-uslogon></comp-uslogon>'
+    };
+    var stlogon = {
+      name: 'stlogon',
+      url: '/stlogon',
+      template: '<comp-stlogon></comp-stlogon>'
     };
     var order = {
       name: 'order',
       url: '/order',
       template: '<comp-order></comp-order>'
     };
-    
+    var kitchen = {
+      name: 'kitchen',
+      url: '/kitchen',
+      template: '<comp-kitchen></comp-kitchen>'
+    };
     $stateProvider.state(main);
     $stateProvider.state(about);
-    $stateProvider.state(logon);
+    $stateProvider.state(uslogon);
+    $stateProvider.state(stlogon);
     $stateProvider.state(order);
+$stateProvider.state(kitchen);
     $urlRouterProvider.otherwise('/main');
   }
 })(angular);

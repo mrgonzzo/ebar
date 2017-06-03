@@ -1,0 +1,14 @@
+<div class="tacentre clearfix">
+    <p>LogOn</p><p>{{compStlogon.message}}</p>
+    <div ng-model="compStlogon.staffform">
+        <p>
+            <label for="staffcode"> Numero de Empleado: </label>
+            <input type="number" autofocus required ng-model="compStlogon.staffform.staffcod">
+        </p>
+        <p>    <img class="sponsor" src="app/resources/spring.png"/></p>
+        <p>
+            <label for="keyword"> keyword: </label>
+            <input type="password" required ng-model="compStlogon.staffform.keyword">
+        </p>
+        <input type="submit" ng-click="compStlogon.enterOffice()" value="Que tengas buen servicio...">
+    </div>

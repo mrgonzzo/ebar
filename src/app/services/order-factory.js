@@ -7,7 +7,7 @@
         module.getOrderbyuser = function (usercod) {
             var defered = $q.defer();
             var promise = defered.promise;
-            $http.get('http://localhost:8080/edenbar/orders/' + usercod).then(function (response) {
+            $http.get('http://localhost:8080/ebar/orders/' + usercod).then(function (response) {
                 // Seteamos originalUser para que la próxima vez no sea necesaria la llamada ajax
                 self.originalOrder = response.data;
                 defered.resolve(self.originalOrder);
@@ -17,7 +17,7 @@
         };
 
         module.saveOrder = function (order) {
-            $http.post('http://localhost:8080/edenbar/orders/save', order)
+            $http.post('http://localhost:8080/ebar/orders/save', order)
         };
 
         return module;

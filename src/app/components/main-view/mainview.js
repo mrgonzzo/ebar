@@ -11,8 +11,11 @@
 
 function controllerCompMainView ($state){
   var vm = this;
-  vm.goToLogon=function(){
-    $state.go('logon');
+  vm.goToUserlogon=function(){
+    $state.go('uslogon');
+  }
+   vm.goToStafflogon=function(){
+    $state.go('stlogon');
   }
 }
 

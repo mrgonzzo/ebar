@@ -12,7 +12,7 @@
                 defered.resolve(self.originalDrinks);
             } else {
                 // Si no, los cargamos con get y devolvemos el data del response
-                $http.get('http://localhost:8080/edenbar/drinks').then(function (response) {
+                $http.get('http://localhost:8080/ebar/drinks').then(function (response) {
                     // Seteamos originalDrinks para que la próxima vez no sea necesaria la llamada ajax
                     self.originalDrinks = response.data;
                     defered.resolve(self.originalDrinks);
@@ -25,7 +25,7 @@
             var promise = defered.promise;
            
                 // Si no, los cargamos con get y devolvemos el data del response
-                $http.get('http://localhost:8080/edenbar/drinks/kind/'+sdrink).then(function (response) {
+                $http.get('http://localhost:8080/ebar/drinks/kind/'+sdrink).then(function (response) {
                     // Seteamos originalKinds para que la próxima vez no sea necesaria la llamada ajax
                     self.originalKinds = response.data;
                     defered.resolve(self.originalKinds);

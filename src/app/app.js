@@ -1,7 +1,7 @@
 'use strict';
 (function (angular) {
   /* Declaramos el módulo */
-  angular.module('app', ['ui.router']);
+  angular.module('app', ['ui.router','angular-websocket']);
 
   angular.module('app').config(['$stateProvider', '$urlRouterProvider', appConfig]);
 

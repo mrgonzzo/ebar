@@ -15,9 +15,26 @@
 
             return promise;
         };
+module.getOrderbyid = function (orcod) {
+            var defered = $q.defer();
+            var promise = defered.promise;
+            $http.get('http://localhost:8080/ebar/orders/ws/' + orcod).then(function (response) {
+                // Seteamos originalUser para que la próxima vez no sea necesaria la llamada ajax
+                self.originalOrder = response.data;
+                defered.resolve(self.originalOrder);
+            });
 
+            return promise;
+        };
         module.saveOrder = function (order) {
-            $http.post('http://localhost:8080/ebar/orders/save', order)
+            var defered = $q.defer();
+            var promise = defered.promise;
+            $http.post('http://localhost:8080/ebar/orders/save', order).then(function(response){
+                self.originalOrder= response.data;
+                defered.resolve(self.originalOrder);
+            });
+
+            return promise;
         };
 
         return module;

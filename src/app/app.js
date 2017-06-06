@@ -1,11 +1,14 @@
 'use strict';
 (function (angular) {
   /* Declaramos el módulo */
-  angular.module('app', ['ui.router','angular-websocket']);
+  angular.module('app', ['ui.router', 'ngWebSocket']);
 
   angular.module('app').config(['$stateProvider', '$urlRouterProvider', appConfig]);
 
   function appConfig($stateProvider, $urlRouterProvider) {
+    var ws = {
+      
+    }
     var main = {
       name: 'main',
       url: '/main',
@@ -41,7 +44,7 @@
     $stateProvider.state(uslogon);
     $stateProvider.state(stlogon);
     $stateProvider.state(order);
-$stateProvider.state(kitchen);
+    $stateProvider.state(kitchen);
     $urlRouterProvider.otherwise('/main');
   }
 })(angular);

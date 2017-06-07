@@ -34,17 +34,17 @@
       url: '/order',
       template: '<comp-order></comp-order>'
     };
-    var kitchen = {
-      name: 'kitchen',
-      url: '/kitchen',
-      template: '<comp-kitchen></comp-kitchen>'
+    var ofice = {
+      name: 'ofice',
+      url: '/ofice',
+      template: '<comp-ofice></comp-ofice>'
     };
     $stateProvider.state(main);
     $stateProvider.state(about);
     $stateProvider.state(uslogon);
     $stateProvider.state(stlogon);
     $stateProvider.state(order);
-    $stateProvider.state(kitchen);
+    $stateProvider.state(ofice);
     $urlRouterProvider.otherwise('/main');
   }
 })(angular);

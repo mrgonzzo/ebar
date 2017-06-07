@@ -10,8 +10,8 @@
     });
     function controllerCompStlogon($timeout, $state, staffFactory) {
         var vm = this;
-        goKitchen = function () {
-            $state.go('kitchen');
+        goOfice = function () {
+            $state.go('ofice');
         };
         vm.staffform = {};
         vm.message = '';
@@ -37,7 +37,7 @@
                             vm.message = 'Hola ' + bdwaiter.name + ' Pasa...';
                             staffFactory.logedstaff = bdwaiter;
                             console.log('staffFactory.logedstaff',staffFactory.logedstaff);
-                            $timeout(goKitchen, 2000);
+                            $timeout(goOfice, 2000);
                         }//else x
                     };//else y
                 });

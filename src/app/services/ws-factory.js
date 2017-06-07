@@ -54,6 +54,7 @@
             }
             // Storing in a variable for clarity on what sendRequest returns
             var promise = self.ws.sendRequest(request);
+            console.log('getOrders',request);
             return promise;
         };
         return module;

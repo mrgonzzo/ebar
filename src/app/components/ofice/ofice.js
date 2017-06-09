@@ -11,35 +11,12 @@
 
   function controllerCompOfice( $timeout, $websocket, wsFactory) {
     var vm = this;
-    vm.pedido={};
-    
-    var socket=wsFactory.ws;
-    var stompClient = null;
-    socket.onOpen();
-    
-     vm.connect  = function(){
-      //var socket = new SockJS('ws://localhost:8080/kitchen');
-       
-      stompClient = Stomp.over(socket);
-       stompClient.connect({}, function (frame) {
-        setConnected(true);
-        console.log('Connected: ' + frame);
-        stompClient.subscribe('/ordermessage/marchando', function (pedido) {
-            vm.showPedido(JSON.parse(pedido.body).content);
-            console.log('Connected: ' + frame);
-        });
-    });
-
-  }
-  
-  vm.showPedido=function (pedido) {
-    socket.onMessage(pedido);
-    //$("#greetings").append("<tr><td>" + message + "</td></tr>");
-    console.log('message ' + pedido);
-    vm.pedido=pedido;
-    return vm.pedido;
-}
-
+    vm.pedido;
+    console.log('ding')
+    wsFactory.wsconnect();
+    wsFactory.wsonOpen(event);
+    wsFactory.wsonMessage(event);
+    vm.pedido=wsFactory.wsmessage;
  
    };
 })(angular)

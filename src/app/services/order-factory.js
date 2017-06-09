@@ -15,10 +15,10 @@
 
             return promise;
         };
-module.getOrderbyid = function (orcod) {
+        module.getOrderbyid = function (orcod) {
             var defered = $q.defer();
             var promise = defered.promise;
-            $http.get('http://localhost:8080/ebar/orders/ws/' + orcod).then(function (response) {
+            $http.get('http://localhost:8080/ebar/orders/' + orcod).then(function (response) {
                 // Seteamos originalUser para que la próxima vez no sea necesaria la llamada ajax
                 self.originalOrder = response.data;
                 defered.resolve(self.originalOrder);

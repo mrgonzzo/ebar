@@ -4,14 +4,18 @@
     // otra opción es poner aquí directamente el html asignándoselo a template:
     templateUrl: 'app/components/order/order.html',
     // en controller definimos la función que escribimos abajo
-    controller: ['$state', '$timeout', '$websocket', 'userFactory', 'drinkFactory', 'orderFactory','wsFactory', controllerCompOrder],
+    controller: ['$state', '$timeout', '$websocket', 'userFactory', 'drinkFactory', 'orderFactory', 'wsFactory', controllerCompOrder],
     // declaramos un alias para no tener que usar $ctrl.
     controllerAs: 'compOrder'
   });
 
-  function controllerCompOrder($state, $timeout, $websocket, userFactory, drinkFactory, orderFactory,wsFactory) {
+  function controllerCompOrder($state, $timeout, $websocket, userFactory, drinkFactory, orderFactory, wsFactory) {
+
     var vm = this;
     vm.user = userFactory.logeduser;
+    vm.wsmessage;
+    //var wsrcv = wsFactory.ws;
+    //  var stompClient = null;
     drinkFactory.getDrink().then(function (data) {
       vm.drinks = data;
     });
@@ -34,22 +38,24 @@
           break;
         }
       }//end for
+
       return vm.order;
     };
-    
-    
     vm.askOrder = function () {
-      
-      console.log('asking order executing ',vm.order);
+
+      console.log('asking order executing ', vm.order);
       orderFactory.saveOrder(vm.order).then(function (data) {
         var ordertosend = data.idorder;
-        wsFactory.getOrders(ordertosend);
+        // wsFactory.getOrders(ordertosend);
         console.log('asking order (save) return data.idorder', data)
-        wsFactory.ws.onOpen(data);
-        
-       });
-      
-        vm.order = {};
+        wsFactory.wsconnect();
+        wsFactory.wsonOpen(event)
+        wsFactory.wssendmessage(data);
+        wsFactory.wsonMessage(event);
+        vm.wsmessage=wsFactory.wsmessage;
+      });
+
+      vm.order = {};
       vm.kinds = null;
       vm.selkind = '';
       vm.kindSelect = '';

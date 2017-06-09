@@ -1,14 +1,12 @@
 'use strict';
 (function (angular) {
   /* Declaramos el módulo */
-  angular.module('app', ['ui.router', 'ngWebSocket']);
+ angular.module('app', ['ui.router', 'angular-websocket']);
 
   angular.module('app').config(['$stateProvider', '$urlRouterProvider', appConfig]);
 
   function appConfig($stateProvider, $urlRouterProvider) {
-    var ws = {
-      
-    }
+   
     var main = {
       name: 'main',
       url: '/main',

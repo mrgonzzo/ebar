@@ -46,13 +46,13 @@
       console.log('asking order executing ', vm.order);
       orderFactory.saveOrder(vm.order).then(function (data) {
         var ordertosend = data.idorder;
+        
         // wsFactory.getOrders(ordertosend);
-        console.log('asking order (save) return data.idorder', data)
         wsFactory.wsconnect();
         wsFactory.wsonOpen(event)
-        wsFactory.wssendmessage(data);
+        wsFactory.sendOrder(data);
         wsFactory.wsonMessage(event);
-        vm.wsmessage=wsFactory.wsmessage;
+        wsFactory.showOrder();
       });
 
       vm.order = {};

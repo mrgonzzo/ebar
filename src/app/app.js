@@ -3,10 +3,10 @@
   /* Declaramos el módulo */
  angular.module('app', ['ui.router', 'angular-websocket']);
 
-  angular.module('app').config(['$stateProvider', '$urlRouterProvider', appConfig]);
+  angular.module('app').config(['$stateProvider', '$urlRouterProvider','$socketProvider', appConfig]);
 
-  function appConfig($stateProvider, $urlRouterProvider) {
-   
+  function appConfig($stateProvider, $urlRouterProvider,$socketProvider) {
+
     var main = {
       name: 'main',
       url: '/main',

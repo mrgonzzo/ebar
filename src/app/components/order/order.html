@@ -1,5 +1,5 @@
 <div class="tacentre clearfix">
-    <h1>wsFactory.wsmessage {{compOrder.wsmessage}}</h1>
+   
     <p>¿Que deseas {{compOrder.user.name}}?</p>
 
     <ng-form="orderform" class="form" ng-model="compOrder.order">
@@ -26,4 +26,8 @@
      
         <button ng-click="compOrder.askOrder()">Hacer pedido</button>
         </ng-form>
+         <h1> {{compOrder.wsmessage.idorder}}<br>
+             {{compOrder.wsmessage.dateorder}}<br>{{compOrder.wsmessage.idcustomer}}<br>{{compOrder.wsmessage.iddrink}}<br>
+             {{compOrder.wsmessage.priceorder}}</h1>
+         
 </div>

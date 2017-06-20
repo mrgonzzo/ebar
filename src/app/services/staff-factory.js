@@ -8,8 +8,8 @@
         module.getLogstaff = function (staffcod) {
              var defered = $q.defer();
             var promise = defered.promise;
-            //http://localhost:8080/ebar/employe/
-            $http.get('http://localhost:8080/ebar/customer/' + staffcod ).then(function (response) {
+            //http://192.168.1.41:8080/ebar/employe/
+            $http.get('http://192.168.1.41:8080/ebar/customer/' + staffcod ).then(function (response) {
                     // Seteamos originalstaff para que la próxima vez no sea necesaria la llamada ajax
                     self.originalstaff = response.data;
                     defered.resolve(self.originalstaff);

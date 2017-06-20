@@ -13,15 +13,15 @@
         var vm = this;
         vm.pedido;
         var data = 'CocinaOk';
-        /*wsFactory.wsconnect();
+        wsFactory.wsconnect();
         wsFactory.wsonOpen(event)
-        wsFactory.wsonMessage(event);
-        wsFactory.wssendmessage(data);*/
+        //wsFactory.wsonMessage(event);
+        //wsFactory.wssendmessage(data);
         $interval(function () {
         vm.pedido = wsFactory.wsmessage;
          console.log('vm.pedido ',vm.pedido);
       console.log('wsFactory.wsmessage ',wsFactory.wsmessage);
-         }, 1000);
+         }, 5000);
         
 
     };

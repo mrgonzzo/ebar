@@ -14,6 +14,7 @@
     var vm = this;
     vm.user = userFactory.logeduser;
     vm.wsmessage={};
+    
     wsFactory.wsconnect();
 
     drinkFactory.getDrink().then(function (data) {
@@ -48,11 +49,14 @@
         var ordertosend = data.idorder;
         console.log('GGG data', data);
         wsFactory.sendOrder(ordertosend);
+        console.log('GGG wsFactory.sendOrder(ordertosend)',ordertosend);
         wsFactory.wsonMessage(event);
+        console.log('GGG wsFactory.wsonMessage(event)',event);
+         vm.wsmessage=wsFactory.wsmessage;
+      console.log('GGG vm.wsmessage',vm.wsmessage,'GGG wsFactory.wsmessage ',wsFactory.wsmessage);
       });
       //wsFactory.wsonMessage(event);
-      vm.wsmessage=wsFactory.wsmessage;
-      console.log('GGG vm.wsmessage',vm.wsmessage,'GGG wsFactory.wsmessage ',wsFactory.wsmessage);
+     
       
       vm.order = {};
       vm.kinds = null;

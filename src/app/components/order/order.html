@@ -1,5 +1,5 @@
 <div class="tacentre clearfix">
-   
+
     <p>¿Que deseas {{compOrder.user.name}}?</p>
 
     <ng-form="orderform" class="form" ng-model="compOrder.order">
@@ -23,11 +23,13 @@
             <p>Vas a pedir {{compOrder.drinkSelect}} {{compOrder.selkind}}</p>
             <p>Y te va a costar: {{compOrder.order.priceorder}} €</p>
         </div>
-     
+
         <button ng-click="compOrder.askOrder()">Hacer pedido</button>
         </ng-form>
-         <h1> {{compOrder.wsmessage.idorder}}<br>
-             {{compOrder.wsmessage.dateorder}}<br>{{compOrder.wsmessage.idcustomer}}<br>{{compOrder.wsmessage.iddrink}}<br>
-             {{compOrder.wsmessage.priceorder}}</h1>
-         
+        <h1> {{compOrder.wsmessage.dateorder}}
+            <br> {{compOrder.wsmessage.idcustomer}}
+            <br> {{compOrder.wsmessage.iddrink}}
+            <br> {{compOrder.wsmessage.priceorder}}
+        </h1>
+        <h2>{{compOrder.wsmessage}}</h2>
 </div>

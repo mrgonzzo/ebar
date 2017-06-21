@@ -39,7 +39,7 @@
 					console.log('GGG self..wsonOpen(event);', event);
 					console.log('GGG wsorder ',wsorder);
 					//self.wsmessage = JSON.stringify(wsorder.body);
-					self.showOrder(JSON.parse(wsorder.body));
+					//self.showOrder(JSON.parse(wsorder.body));
 					console.log('GGG JSON.parse(wsorder.body).content: ',JSON.parse(wsorder.body));
 					//	self.wsonOpen(message);
 				});
@@ -69,7 +69,7 @@
 			 console.log('GGG wsonMessage self.wsmessage ', self.wsmessage); 
 			 console.log('GGG wsonMessage currentTarget', event.currentTarget.response);
 			  console.log('GGG wsonMessage event.data', event.data); 
-               
+               self.showOrder(JSON.parse(event.currentTarget.response));
 			 //self.showOrder(event.currentTarget.response);
 		}
 		/*

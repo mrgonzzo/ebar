@@ -14,14 +14,15 @@
         vm.pedido;
         var data = 'CocinaOk';
         wsFactory.wsconnect();
-        wsFactory.wsonOpen(event)
-        //wsFactory.wsonMessage(event);
+        //wsFactory.wsonOpen(event)
+        wsFactory.wsonMessage(event);
+        vm.pedido=wsFactory.wsmessage;
         //wsFactory.wssendmessage(data);
-        $interval(function () {
+     /*   $interval(function () {
         vm.pedido = wsFactory.wsmessage;
          console.log('vm.pedido ',vm.pedido);
       console.log('wsFactory.wsmessage ',wsFactory.wsmessage);
-         }, 5000);
+         }, 5000);*/
         
 
     };
